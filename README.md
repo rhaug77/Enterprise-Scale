@@ -11,6 +11,7 @@
 * [Create Landing Zones](./docs/EnterpriseScale-Deploy-landing-zones.md)
 * [[Optional] Getting started with Infrastructure-as-code](./docs/Deploy/getting-started.md)
   * [Configure Azure permissions for ARM tenant deployments & setup GitHub](./docs/Deploy/setup-github.md)
+  * [Configure Service Principal permissions for subscription creation](./docs/Deploy/enable-subscription-creation.md)
   * [Initialize Git with current Azure configuration](./docs/Deploy/discover-environment.md)
   * [Deploy your own ARM templates with AzOps GitHub Actions](./docs/Deploy/deploy-new-arm.md)
   * [Configure Azure DevOps support](./docs/Deploy/setup-azuredevops.md)
@@ -19,6 +20,7 @@
 * [How Do I Contribute?](./docs/EnterpriseScale-Contribution.md)
 * [FAQ](./docs/EnterpriseScale-FAQ.md)
 * [Roadmap](./docs/EnterpriseScale-Roadmap.md)
+* [Microsoft Support Policy](./SUPPORT.md)
 
 ---
 
@@ -30,7 +32,11 @@
 
 ## Objective
 
-The Enterprise-Scale architecture provides prescriptive guidance coupled with Azure best practices, and it follows design principles across the critical design areas for organizations to define their Azure architecture. It will continue to evolve alongside the Azure platform and is ultimately defined by the various design decisions that organizations must make to define their Azure journey.
+The Enterprise-Scale architecture provides prescriptive guidance coupled with Azure best practices, and it follows design principles across the critical design areas for organizations to define their Azure architecture. It will continue to evolve alongside the Azure platform and is ultimately defined by the various design decisions that organizations must make to define their Azure journey. 
+
+The Enterprise-Scale architecture is modular by design and allow organizations to start with foundational landing zones that support their application portfolios, and the architecture enables organizations to start as small as needed and scale alongside their business requirements regardless of scale point.
+
+![hippo](./ESLZ.gif)
 
 ---
 
