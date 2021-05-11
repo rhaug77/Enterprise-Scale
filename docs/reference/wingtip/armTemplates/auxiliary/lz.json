@@ -4,7 +4,10 @@
     "parameters": {
         "topLevelManagementGroupPrefix": {
             "type": "string",
-            "maxLength": 5
+            "maxLength": 10,
+            "metadata": {
+                "description": "Provide a prefix (max 10 characters, unique at tenant-scope) for the Management Group hierarchy and other resources created as part of Enterprise-scale."
+            }
         },
         "enableSqlAudit": {
             "type": "string",
@@ -309,9 +312,6 @@
             "apiVersion": "2018-05-01",
             "name": "[variables('policyAssignmentNames').denyAksPriv]",
             "location": "[deployment().location]",
-            "identity": {
-                "type": "SystemAssigned"
-            },
             "properties": {
                 "description": "Deny-Privileged-Containers-AKS",
                 "displayName": "Deny-Privileged-Containers-AKS",
@@ -330,9 +330,6 @@
             "apiVersion": "2018-05-01",
             "name": "[variables('policyAssignmentNames').denyAksNoPrivEsc]",
             "location": "[deployment().location]",
-            "identity": {
-                "type": "SystemAssigned"
-            },
             "properties": {
                 "description": "Deny-Privileged-Escalations-AKS",
                 "displayName": "Deny-Privileged-Escalations-AKS",
@@ -351,9 +348,6 @@
             "apiVersion": "2018-05-01",
             "name": "[variables('policyAssignmentNames').denyHttpIngressAks]",
             "location": "[deployment().location]",
-            "identity": {
-                "type": "SystemAssigned"
-            },
             "properties": {
                 "description": "Enforce-Https-Ingress-AKS",
                 "displayName": "Enforce-Https-Ingress-AKS",
@@ -376,7 +370,12 @@
                 "description": "Enforce-Secure-Storage",
                 "displayName": "Enforce-Secure-Storage",
                 "policyDefinitionId": "[variables('policyDefinitions').storageHttps]",
-                "scope": "[variables('scope')]"             
+                "scope": "[variables('scope')]",
+                "parameters": {
+                    "effect": {
+                        "value": "Deny"
+                    }
+                }           
             }
         },
         {
